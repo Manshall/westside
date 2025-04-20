@@ -7,6 +7,8 @@
 
   <title>{{ $title ?? 'Westside' }}</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Materialize CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
 
   <!-- Include Livewire Styles -->
   @livewireStyles
@@ -42,6 +44,7 @@
   </script>
 
   @stack('scripts') <!-- Stack for additional scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
