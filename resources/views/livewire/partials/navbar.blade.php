@@ -31,7 +31,7 @@
 
               @auth
               <div class="relative hs-dropdown md:[--trigger:hover] md:py-4 text-2xl">
-                <button type="button" class="flex items-center gap-x-1 text-black-700 hover:text-black font-medium dark:text-gray-300 dark:hover:text-gray-900">
+                <button type="button" class="flex items-center gap-x-1 text-gray-700 hover:text-gray-900 font-medium dark:text-gray-300 dark:hover:text-white">
                   {{ Auth::user()->name }}
                   <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />

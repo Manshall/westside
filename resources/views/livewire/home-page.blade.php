@@ -55,13 +55,9 @@
           <!-- End Review -->
         </div>
         <!-- End Col -->
-        @foreach ($categories as $category)
-
-
         <div class="relative ms-4">
-          <img class="w-full rounded-md" src="{{ url('storage',$category->image) }}" alt="Image Description">
+          <img class="w-full rounded-md" src="{{ asset('brand/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
           <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
-@endforeach
           <!-- SVG-->
           {{-- <div class="absolute bottom-0 start-0">
             <svg class="w-2/3 ms-auto h-auto text-white dark:text-slate-900" width="630" height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">

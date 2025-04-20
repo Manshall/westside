@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Test Materialize</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✅ Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>{{ $title ?? 'Westside' }}</title>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+  <!-- Include Livewire Styles -->
+  @livewireStyles
 </head>
-<body>
 
-  <!-- Tes tombol materialize -->
-  <a class="waves-effect waves-light btn">Button</a>
+<body class="bg-slate-200 dark:bg-slate-700">
+  @livewire('partials.navbar')
 
-  <!-- ✅ jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <main>
+    {{ $slot }}
+  </main>
 
-  <!-- ✅ Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  @livewire('partials.footer')
 
-  <!-- ✅ Inisialisasi -->
+  <!-- Include Livewire Scripts -->
+  @livewireScripts
+
+  <!-- SweetAlert2 Script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Add Filament app.js -->
+  <script src="{{ asset('js/filament/filament/app.js') }}"></script>
+
+  <!-- Materialize and Mousetrap initialization -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof M !== 'undefined' && M.AutoInit) {
-        M.AutoInit();
-        console.log('Materialize loaded!');
+        M.AutoInit(); // Initialize Materialize components
       } else {
         console.error('Materialize did not load properly.');
       }
     });
   </script>
+
+  @stack('scripts') <!-- Stack for additional scripts -->
 </body>
+
 </html>

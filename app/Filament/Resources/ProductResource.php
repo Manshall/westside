@@ -159,7 +159,7 @@ class ProductResource extends Resource
                ActionGroup::make([
                 ViewAction::make(),
                 EditAction::make(),
-                DeleteACtion::make(),
+                DeleteAction::make(),
                ])
             ])
             ->bulkActions([ 
