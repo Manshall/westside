@@ -8,7 +8,10 @@
   <title>{{ $title ?? 'Warung Mae' }}</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-  <!-- Include Livewire Styles -->
+  <!-- ✅ Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- ✅ Livewire Styles -->
   @livewireStyles
 </head>
 
@@ -21,27 +24,31 @@
 
   @livewire('partials.footer')
 
-  <!-- Include Livewire Scripts -->
+  <!-- ✅ Livewire Scripts -->
   @livewireScripts
 
-  <!-- SweetAlert2 Script -->
+  <!-- ✅ SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Add Filament app.js -->
+  <!-- ✅ Filament JS -->
   <script src="{{ asset('js/filament/filament/app.js') }}"></script>
 
-  <!-- Materialize and Mousetrap initialization -->
+  <!-- ✅ jQuery & Materialize JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- ✅ Materialize Init -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof M !== 'undefined' && M.AutoInit) {
-        M.AutoInit(); // Initialize Materialize components
+        M.AutoInit();
       } else {
         console.error('Materialize did not load properly.');
       }
     });
   </script>
 
-  @stack('scripts') <!-- Stack for additional scripts -->
+  @stack('scripts')
 </body>
 
 </html>

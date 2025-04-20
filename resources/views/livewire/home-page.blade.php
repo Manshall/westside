@@ -19,7 +19,7 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </a>
-            <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-black bg-white text-black shadow-sm hover:bg-gray-100" href="https://wa.me/6287836873864">
+            <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-white-200 bg-white text-white-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-white-900 dark:border-gray-700 dark:text-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="https://wa.me/6287836873864">
               Hubungi Kami
             </a>
           </div>
