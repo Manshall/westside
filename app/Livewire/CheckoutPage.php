@@ -82,28 +82,28 @@ class CheckoutPage extends Component
         $address->phone = $this->phone;
         $address->street_address = $this->street_address;
         $address->city = $this->city;
-        $address->state = $this->state;
+        // $address->state = $this->state;
         $address->zip_code = $this->zip_code;
         $address->save();
 
         // Redirect atau integrasi pembayaran (Stripe/Midtrans/etc)
-        $redirect_url = '';
+        // $redirect_url = '';
 
-        if ($this->payment_method === 'stripe') {
-            Stripe::setApiKey(env('STRIPE_SECRET'));
-            $sessionCheckout = Session::create([
-                'payment_method_types' => ['card'],
-                'customer_email'=>auth()->user()->email,
-                'line_items'=> $line_items,
-                'mode'=> 'payment',
-                'success_url' => route('success') . '?session_id={CHECKOUT_SESSION_ID}',
-                'cancel_url'=> route('cancel'),
-            ]);
+        // if ($this->payment_method === 'stripe') {
+        //     Stripe::setApiKey(env('STRIPE_SECRET'));
+        //     $sessionCheckout = Session::create([
+        //         'payment_method_types' => ['card'],
+        //         'customer_email'=>auth()->user()->email,
+        //         'line_items'=> $line_items,
+        //         'mode'=> 'payment',
+        //         'success_url' => route('success') . '?session_id={CHECKOUT_SESSION_ID}',
+        //         'cancel_url'=> route('cancel'),
+        //     ]);
 
-            $redirect_url =$sessionCheckout->url;
-        } else {
-            $redirect_url =route('success');
-        }
+        //     $redirect_url =$sessionCheckout->url;
+        // } else {
+        //     $redirect_url =route('success');
+        // }
         $order->save();
         $address->order_id=$order->id;
         $address->save();

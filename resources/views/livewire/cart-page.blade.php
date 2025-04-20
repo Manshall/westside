@@ -67,12 +67,8 @@
               <span>Subtotal</span>
               <span>{{ Number::currency($grand_total, 'IDR') }}</span>
             </div>
-            <div class="flex justify-between mb-2 text-white-700 dark:text-black">
-              <span>Taxes</span>
-              <span>{{ Number::currency(0, 'IDR') }}</span>
-            </div>
             <div class="flex justify-between mb-2 text-bck-700 dark:text-black">
-              <span>Shipping</span>
+              <span>Ongkos Pengiriman</span>
               <span>{{ Number::currency(0, 'IDR') }}</span>
             </div>
             <hr class="my-2 border-white-300 dark:border-black">
