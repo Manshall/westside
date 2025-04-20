@@ -19,7 +19,7 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </a>
-            <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-white-200 bg-white text-white-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-white-900 dark:border-gray-700 dark:text-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="https://wa.me/6287836873864">
+            <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-black bg-white text-black shadow-sm hover:bg-gray-100" href="https://wa.me/6287836873864">
               Hubungi Kami
             </a>
           </div>
@@ -59,7 +59,7 @@
 
 
         <div class="relative ms-4">
-          <img class="w-full rounded-md" src="{{  url('storage',$category->image) }}" alt="Image Description">
+          <img class="w-full rounded-md" src="{{ url('storage',$category->image) }}" alt="Image Description">
           <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
 @endforeach
           <!-- SVG-->
@@ -120,7 +120,7 @@
 
       <div class="bg-white rounded-lg shadow-md dark:bg-gray-800" wire:key="{{$brand->id}}">
       <a href="/products?selected_brands[0]={{ $brand->id }}" class="">
-          <img src="{{ url('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
+          <img src="{{ asset('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
       </a>
       <div class="p-5 text-center">
           <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">

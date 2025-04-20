@@ -1,164 +1,168 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-  <h1 class="text-4xl font-bold text-slate-500">Order Details</h1>
+  <h1 class="text-2xl sm:text-3xl font-bold text-black">Detail Pesanan</h1>
 
-  <!-- Grid -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
-    <!-- Card -->
-    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800">
-      <div class="p-4 md:p-5 flex gap-x-4">
-        <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg dark:bg-gray-800">
-          <svg class="flex-shrink-0 size-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        </div>
-
-        <div class="grow">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500">
-              Customer
-            </p>
+  <!-- Grid Info -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
+      <!-- Pelanggan -->
+      <div class="flex flex-col bg-blue-100 border shadow-sm rounded-xl">
+          <div class="p-4 md:p-5 flex gap-x-4">
+              <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                  <!-- Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.403 4.209A2 2 0 0116.836 22H7.164a2 2 0 01-1.757-2.791L4 17h5m6-3V4a2 2 0 00-2-2H7a2 2 0 00-2 2v10m6 4V9" />
+                  </svg>
+              </div>
+              <div class="grow">
+                  <p class="text-xs uppercase tracking-wide text-black">Pelanggan</p>
+                  <div class="mt-1">{{ $address->full_name }}</div>
+              </div>
           </div>
-          <div class="mt-1 flex items-center gap-x-2">
-            <div>{{ $order->customer->name }}</div>
-          </div>
-        </div>
       </div>
-    </div>
-    <!-- End Card -->
 
-    <!-- Card -->
-    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800">
-      <div class="p-4 md:p-5 flex gap-x-4">
-        <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg dark:bg-gray-800">
-          <svg class="flex-shrink-0 size-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 22h14" />
-            <path d="M5 2h14" />
-            <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
-            <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
-          </svg>
-        </div>
-
-        <div class="grow">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500">
-              Order Date
-            </p>
+      <!-- Tanggal -->
+      <div class="flex flex-col bg-blue-100 border shadow-sm rounded-xl">
+          <div class="p-4 md:p-5 flex gap-x-4">
+              <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                  <!-- Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2zM4 6h16M4 10h16M4 14h16M4 18h16" />
+                  </svg>
+              </div>
+              <div class="grow">
+                  <p class="text-xs uppercase tracking-wide text-black">Tanggal Pesanan</p>
+                  <h3 class="text-lg font-medium text-black mt-1">{{ $order_items[0]->created_at->format('d-m-Y') }}</h3>
+              </div>
           </div>
-          <div class="mt-1 flex items-center gap-x-2">
-            <h3 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-              {{ $order->created_at->format('d-m-Y') }}
-            </h3>
-          </div>
-        </div>
       </div>
-    </div>
-    <!-- End Card -->
 
-    <!-- Card -->
-    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800">
-      <div class="p-4 md:p-5 flex gap-x-4">
-        <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg dark:bg-gray-800">
-          <svg class="flex-shrink-0 size-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6" />
-            <path d="m12 12 4 10 1.7-4.3L22 16Z" />
-          </svg>
-        </div>
-
-        <div class="grow">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500">
-              Order Status
-            </p>
-          </div>
-          <div class="mt-1 flex items-center gap-x-2">
-            <span class="bg-{{ $order->status == 'processing' ? 'yellow' : 'green' }}-500 py-1 px-3 rounded text-white shadow">{{ ucfirst($order->status) }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Card -->
-
-    <!-- Card -->
-    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800">
-      <div class="p-4 md:p-5 flex gap-x-4">
-        <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg dark:bg-gray-800">
-          <svg class="flex-shrink-0 size-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5z" />
-            <path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-            <path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" />
-            <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
-          </svg>
-        </div>
-
-        <div class="grow">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500">
-              Payment Status
-            </p>
-          </div>
-          <div class="mt-1 flex items-center gap-x-2">
-            <span class="bg-{{ $order->payment_status == 'paid' ? 'green' : 'red' }}-500 py-1 px-3 rounded text-white shadow">{{ ucfirst($order->payment_status) }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Card -->
-  </div>
-  <!-- End Grid -->
-
-  <div class="flex flex-col md:flex-row gap-4 mt-4">
-    <div class="md:w-3/4">
-      <div class="bg-white overflow-x-auto rounded-lg shadow-md p-6 mb-4">
-        <table class="w-full">
-          <thead>
-            <tr>
-              <th class="text-left font-semibold">Product</th>
-              <th class="text-left font-semibold">Price</th>
-              <th class="text-left font-semibold">Quantity</th>
-              <th class="text-left font-semibold">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($order->products as $product)
-              <tr wire:key="{{ $product->id }}">
-                <td class="py-4">
-                  <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="{{ asset('storage/' . $product->image_url) }}" alt="{{ $product->name }}">
-                    <span class="font-semibold">{{ $product->name }}</span>
+      <!-- Status -->
+      <div class="flex flex-col bg-blue-100 border shadow-sm rounded-xl">
+          <div class="p-4 md:p-5 flex gap-x-4">
+              <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                  <!-- Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3l18 18M3 21L21 3" />
+                  </svg>
+              </div>
+              <div class="grow">
+                  <p class="text-xs uppercase tracking-wide text-black">Status Pesanan</p>
+                  <div class="mt-1">
+                      @php
+                          $status = match ($order->status) {
+                              'new' => '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Baru</span>',
+                              'processing'
+                                  => '<span class="bg-yellow-500 py-1 px-3 rounded text-black shadow">Diproses</span>',
+                              'shipped'
+                                  => '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dikirim</span>',
+                              'delivered'
+                                  => '<span class="bg-gray-700 py-1 px-3 rounded text-white shadow">Diterima</span>',
+                              'cancelled'
+                                  => '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Dibatalkan</span>',
+                              default => '',
+                          };
+                      @endphp
+                      {!! $status !!}
                   </div>
-                </td>
-                <td class="py-4">{{ number_format($product->price, 2) }}</td>
-                <td class="py-4">{{ $product->pivot->quantity }}</td>
-                <td class="py-4">{{ number_format($product->price * $product->pivot->quantity, 2) }}</td>
-              </tr>
-            @endforeach
-          </tbody>
-        </table>
+              </div>
+          </div>
       </div>
-    </div>
 
-    <!-- Summary -->
-    <div class="w-full md:w-1/4 bg-white p-6 rounded-lg shadow-md">
-      <div class="flex justify-between mb-2">
-        <span>Subtotal</span>
-        <span>{{ number_format($order->subtotal, 2) }}</span>
+      <!-- Status Pembayaran -->
+      <div class="flex flex-col bg-blue-100 border shadow-sm rounded-xl">
+          <div class="p-4 md:p-5 flex gap-x-4">
+              <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-gray-100 rounded-lg">
+                  <!-- Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a3 3 0 013-3h12a3 3 0 013 3v16a3 3 0 01-3 3H6a3 3 0 01-3-3V4z" />
+                  </svg>
+              </div>
+              <div class="grow">
+                  <p class="text-xs uppercase tracking-wide text-black">Status Pembayaran</p>
+                  <div class="mt-1">
+                      @php
+                          $payment_status = match ($order->payment_status) {
+                              'pending'
+                                  => '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Menunggu</span>',
+                              'paid'
+                                  => '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dibayar</span>',
+                              'failed' => '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Gagal</span>',
+                              default => '',
+                          };
+                      @endphp
+                      {!! $payment_status !!}
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="flex justify-between mb-2">
-        <span>Taxes</span>
-        <span>{{ number_format($order->taxes, 2) }}</span>
+  </div>
+
+  <!-- Konten Utama -->
+  <div class="flex flex-col lg:flex-row gap-4 mt-6">
+      <!-- Tabel Produk -->
+      <div class="lg:w-3/4 w-full">
+          <div class="bg-blue-100 rounded-lg shadow-md p-4 sm:p-6 mb-4 overflow-x-auto">
+              <div class="min-w-[700px]">
+                  <table class="w-full text-sm text-left whitespace-nowrap">
+                      <thead>
+                          <tr class="text-gray-600">
+                              <th class="px-6 py-3 font-semibold text-left">Produk</th>
+                              <th class="px-6 py-3 font-semibold text-left">Harga</th>
+                              <th class="px-6 py-3 font-semibold text-center">Jumlah</th>
+                              <th class="px-6 py-3 font-semibold text-right">Total</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($order_items as $item)
+                              <tr wire:key="{{ $item->id }}" class="border-b last:border-0">
+                                  <td class="px-6 py-4">
+                                      <div class="flex items-center gap-4">
+                                          <!-- Ukuran Gambar diatur agar lebih proporsional -->
+                                          <img class="h-12 w-12 rounded object-cover"
+                                              src="{{ url('storage', $item->product->images[0]) }}"
+                                              alt="{{ $item->product->name }}">
+                                          <span class="font-medium text-gray-800">{{ $item->product->name }}</span>
+                                      </div>
+                                  </td>
+                                  <td class="px-6 py-4">Rp {{ number_format($item->unit_amount, 0, ',', '.') }}</td>
+                                  <td class="px-6 py-4 text-center">{{ $item->quantity }}</td>
+                                  <td class="px-6 py-4 text-right">Rp {{ number_format($item->total_amount, 0, ',', '.') }}</td>
+                              </tr>
+                          @endforeach
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
+
+
+          <!-- Alamat Pengiriman -->
+          <div class="bg-blue-100 rounded-lg shadow-md p-6 mb-4">
+              <h2 class="text-lg font-semibold text-slate-700 mb-3">Alamat Pengiriman</h2>
+              <div class="flex flex-col sm:flex-row sm:justify-between gap-2">
+                  <p>{{ $address->street_address }}, {{ $address->city }}, {{ $address->state }},
+                      {{ $address->zip_code }}</p>
+                  <div>
+                      <p class="font-semibold">Telepon:</p>
+                      <p>{{ $address->phone }}</p>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="flex justify-between mb-2">
-        <span>Shipping</span>
-        <span>{{ number_format($order->shipping_fee, 2) }}</span>
+
+      <!-- Ringkasan -->
+      <div class="lg:w-1/4 w-full">
+          <div class="bg-blue-100 rounded-lg shadow-md p-6">
+              <h2 class="text-lg font-semibold mb-4">Ringkasan</h2>
+              <div class="flex justify-between mb-2">
+                  <span>Subtotal</span>
+                  <span>Rp {{ number_format($order->grand_total, 0, ',', '.') }}</span>
+              </div>
+              <hr class="my-2 border-black">
+              <div class="flex justify-between mb-2 font-semibold">
+                  <span>Total Keseluruhan</span>
+                  <span>Rp {{ number_format($order->grand_total, 0, ',', '.') }}</span>
+              </div>
+          </div>
       </div>
-      <hr class="my-2">
-      <div class="flex justify-between mb-2">
-        <span class="font-semibold">Grand Total</span>
-        <span class="font-semibold">{{ number_format($order->grand_total, 2) }}</span>
-      </div>
-    </div>
   </div>
 </div>
