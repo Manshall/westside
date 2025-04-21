@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire;
 
 use App\Helpers\CartManagement;
@@ -24,10 +23,10 @@ class ProductsPage extends Component
     #[Url] public $price_range = 300000;
     #[Url] public $sort = 'latest';
 
-    public function addToCart($product_id)
+    public function addToCart($product_id, $quantity = 1)
     {
         // ✅ Sudah dibetulkan: sekarang pakai addItemToCart() yang default quantity = 1
-        $total_count = CartManagement::addItemToCart($product_id);
+        $total_count = CartManagement::addItemToCart($product_id, $quantity);
 
         $this->dispatch('update-cart-count', total_countId: $total_count);
 
@@ -46,6 +45,7 @@ class ProductsPage extends Component
     {
         $productQuery = Product::query()->where('is_active', 1);
 
+        // Apply filters based on selected categories and brands
         if (!empty($this->selected_categories)) {
             $productQuery->whereIn('category_id', $this->selected_categories);
         }
@@ -54,6 +54,7 @@ class ProductsPage extends Component
             $productQuery->whereIn('brand_id', $this->selected_brands);
         }
 
+        // Apply other filters
         if ($this->featured) {
             $productQuery->where('is_featured', 1);
         }
@@ -66,6 +67,7 @@ class ProductsPage extends Component
             $productQuery->whereBetween('price', [0, $this->price_range]);
         }
 
+        // Apply sorting
         if ($this->sort == 'latest') {
             $productQuery->latest();
         }
@@ -74,6 +76,7 @@ class ProductsPage extends Component
             $productQuery->orderBy('price');
         }
 
+        // Apply pagination
         $products = $productQuery->with(['category', 'brand'])->paginate(9);
 
         return view('livewire.products-page', [

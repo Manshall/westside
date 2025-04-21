@@ -97,7 +97,8 @@
             </div>
 
             <button type="submit" class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
-                <span wire:loading.remove>Order Sekarang</span>
+                <a wire:loading.remove href="https://wa.me/6287836873864" >Order Sekarang
+					</a>
                 <span wire:loading>Memproses...</span>
             </button>
 

@@ -4,7 +4,7 @@
         <div class="relative md:flex md:items-center md:justify-between">
             <div class="flex items-center justify-between">
 
-                <a class="flex-none text-xl font-semibold text-gray-800" href="/" aria-label="Brand">FrozenFood</a>
+                <a class="flex-none text-xl font-semibold text-gray-800" href="/" aria-label="Brand">Westside</a>
                 <div class="md:hidden">
                     <button type="button"
                         class="hs-collapse-toggle flex justify-center items-center w-9 h-9 rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100"

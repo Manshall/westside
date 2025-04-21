@@ -114,6 +114,7 @@ class ProductResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+        ->paginationPageSize(10)
             ->columns([ 
                 TextColumn::make('name')
                     ->searchable(),
