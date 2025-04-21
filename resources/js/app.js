@@ -1,15 +1,19 @@
 import './bootstrap';
 import '../css/app.css';
 import 'preline';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
+window.Swal = Swal;
 
 document.addEventListener('livewire:navigated', () => {
-window.HSStaticMethod.autoInit();
-})
-
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(elems);
+    if (window.HSStaticMethod) {
+        window.HSStaticMethod.autoInit();
+    }
 });
 
-window.Swal = Swal
+document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    if (typeof M !== 'undefined' && M.Dropdown) {
+        M.Dropdown.init(elems);
+    }
+});

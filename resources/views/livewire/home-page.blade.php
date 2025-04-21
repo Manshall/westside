@@ -56,7 +56,7 @@
         </div>
         <!-- End Col -->
         <div class="relative ms-4">
-          <img class="w-full rounded-md" src="{{ asset('brand/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
+          <img class="w-full rounded-md" src="{{ url('brand/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
           <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
           <!-- SVG-->
           {{-- <div class="absolute bottom-0 start-0">
@@ -157,8 +157,7 @@
 
       @foreach ($categories as $category)
 
-      <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/products?selected_categories[0]={{ $category->id }}"
-          >
+      <a href="/products?selected_categories[0]= {{ $category->id }}" class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
           <div class="p-4 md:p-5">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
