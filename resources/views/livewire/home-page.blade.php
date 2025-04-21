@@ -56,7 +56,7 @@
         </div>
         <!-- End Col -->
         <div class="relative ms-4">
-          <img class="w-full rounded-md" src="{{ url('brand/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
+          <img class="w-full rounded-md" src="{{ url('storage/brands/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
           <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
           <!-- SVG-->
           {{-- <div class="absolute bottom-0 start-0">
@@ -116,7 +116,7 @@
 
       <div class="bg-white rounded-lg shadow-md dark:bg-gray-800" wire:key="{{$brand->id}}">
       <a href="/products?selected_brands[0]={{ $brand->id }}" class="">
-          <img src="{{ asset('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
+          <img src="{{ asset('/storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
       </a>
       <div class="p-5 text-center">
           <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
