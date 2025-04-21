@@ -56,7 +56,7 @@
         </div>
         <!-- End Col -->
         <div class="relative ms-4">
-          <img class="w-full rounded-md" src="{{ url('storage/brands/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
+          <img class="w-full rounded-md" src="{{ asset('storage/brands/01JS8XNXDA4W0KZCVMBM7CH1GE.webp') }}" alt="Image Description">
           <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0"></div>
           <!-- SVG-->
           {{-- <div class="absolute bottom-0 start-0">
@@ -116,7 +116,7 @@
 
       <div class="bg-white rounded-lg shadow-md dark:bg-gray-800" wire:key="{{$brand->id}}">
       <a href="/products?selected_brands[0]={{ $brand->id }}" class="">
-          <img src="{{ asset('/public/storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
+          <img src="{{ asset('storage/' . $brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
       </a>
       <div class="p-5 text-center">
           <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
@@ -161,7 +161,7 @@
           <div class="p-4 md:p-5">
             <div class="flex justify-between items-center">
               <div class="flex items-center">
-                <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{ url('/public/storage/',$category->image)}}" alt="{{ $category->name}}">
+                <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{ asset('storage/',$category->image)}}" alt="{{ $category->name}}">
                 <div class="ms-3">
                   <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
                   {{$category->name}}

@@ -4,7 +4,7 @@
             <div class="flex flex-wrap mb-24 -mx-3">
                 <div class="w-full pr-2 lg:w-1/4 lg:block">
                     <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400"> Categories</h2>
+                        <h2 class="text-2xl font-bold dark:text-gray-400"> Kategori </h2>
 
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
@@ -34,26 +34,26 @@
                         </ul>
                     </div>
                     <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400">Product Status</h2>
+                        <h2 class="text-2xl font-bold dark:text-gray-400">Status Produk</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
                             <li class="mb-4">
                                 <label for="featured" class="flex items-center dark:text-gray-300">
                                     <input type="checkbox" id="featured" wire:model.live="featured" value="1" class="w-4 h-4 mr-2">
-                                    <span class="text-lg dark:text-gray-400">Featured Products</span>
+                                    <span class="text-lg dark:text-gray-400">Produk Unggulan</span>
                                 </label>
                             </li>
                             <li class="mb-4">
                                 <label for="on_sale" class="flex items-center dark:text-gray-300">
                                     <input type="checkbox"  wire:model.live="on_sale" id="on_sale" value="1" class="w-4 h-4 mr-2">
-                                    <span class="text-lg dark:text-gray-400">On Sale</span>
+                                    <span class="text-lg dark:text-gray-400">Dalam Penjualan</span>
                                 </label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400">Price</h2>
+                        <h2 class="text-2xl font-bold dark:text-gray-400">Harga</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <div>
                             <div class="semi-bold text-white">{{ Number::currency($price_range,'IDR')}} </div>

@@ -20,7 +20,7 @@ class ProductsPage extends Component
     #[Url] public $selected_brands = [];
     #[Url] public $featured = [];
     #[Url] public $on_sale = [];
-    #[Url] public $price_range = 300000;
+    #[Url] public $price_range = 100000;
     #[Url] public $sort = 'latest';
 
     public function addToCart($product_id, $quantity = 1)
